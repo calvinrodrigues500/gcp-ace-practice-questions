@@ -1,0 +1,47 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+  background-color: #f4f4f4;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.question {
+  margin-bottom: 2rem;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+li {
+  margin: 0.3rem 0;
+}
+a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  text-decoration: underline;
+  color: #007acc;
+  cursor: pointer;
+}
+.answer {
+  margin-top: 0.5rem;
+  color: green;
+  visibility: hidden;
+  min-height: 1.5em;
+}
+.answer.show {
+  visibility: visible;
+}
+.correct {
+  color: green;
+  font-weight: bold;
+}
+.incorrect {
+  color: red;
+  font-weight: bold;
+}

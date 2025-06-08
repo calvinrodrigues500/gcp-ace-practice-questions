@@ -1,0 +1,842 @@
+[
+  {
+    "id": "1",
+    "question": "Your company needs to deploy a web application that can automatically scale based on traffic. The application consists of a frontend and backend. Which Google Cloud service combination would be most appropriate?",
+    "options": [
+      "App Engine Standard Environment for both frontend and backend",
+      "Compute Engine with managed instance groups and Cloud Load Balancing",
+      "Cloud Run for frontend and Cloud Functions for backend",
+      "Google Kubernetes Engine with Horizontal Pod Autoscaler"
+    ],
+    "correct": 1,
+    "explanation": "Compute Engine with managed instance groups provides auto-scaling capabilities, and Cloud Load Balancing distributes traffic effectively. This is a classic scalable architecture pattern."
+  },
+  {
+    "id": "2",
+    "question": "You need to store application logs that will be accessed frequently for the first 30 days, then rarely accessed for up to 1 year. What Cloud Storage class configuration should you use?",
+    "options": [
+      "Standard for all data",
+      "Nearline for all data",
+      "Standard with lifecycle policy to move to Nearline after 30 days",
+      "Regional with lifecycle policy to move to Coldline after 30 days"
+    ],
+    "correct": 2,
+    "explanation": "Standard storage for frequent access (first 30 days), then lifecycle policy automatically moves data to Nearline for infrequent access, optimizing costs."
+  },
+  {
+    "id": "3",
+    "question": "Your team needs to deploy a containerized application that requires exactly 2 vCPUs and 4GB RAM. The application must run 24/7 with minimal management overhead. Which service should you choose?",
+    "options": [
+      "Cloud Functions",
+      "App Engine Flexible Environment",
+      "Cloud Run",
+      "Compute Engine"
+    ],
+    "correct": 2,
+    "explanation": "Cloud Run is ideal for containerized applications with specific resource requirements and provides serverless scaling with minimal management."
+  },
+  {
+    "id": "4",
+    "question": "You are migrating a MySQL database to Google Cloud. The database is currently 500GB and requires high availability with automatic failover. Which option should you choose?",
+    "options": [
+      "Cloud SQL for MySQL with High Availability configuration",
+      "Cloud Spanner",
+      "Firestore in Datastore mode",
+      "MySQL on Compute Engine with manual replication"
+    ],
+    "correct": 0,
+    "explanation": "Cloud SQL for MySQL with HA configuration provides automatic failover, managed backups, and is perfect for traditional MySQL workloads."
+  },
+  {
+    "id": "5",
+    "question": "Your application running on GKE needs to access Cloud Storage buckets. What is the most secure way to provide these permissions?",
+    "options": [
+      "Create a service account key and store it in a Kubernetes Secret",
+      "Use Workload Identity to bind Kubernetes Service Account to Google Service Account",
+      "Grant permissions directly to the GKE node service account",
+      "Use Application Default Credentials with gcloud auth"
+    ],
+    "correct": 1,
+    "explanation": "Workload Identity is the recommended secure method to access Google Cloud services from GKE without storing service account keys."
+  },
+  {
+    "id": "6",
+    "question": "You need to implement a CI/CD pipeline that automatically builds and deploys code when changes are pushed to a Git repository. Which Google Cloud service should you use?",
+    "options": [
+      "Cloud Scheduler",
+      "Cloud Build",
+      "Cloud Composer",
+      "Cloud Dataflow"
+    ],
+    "correct": 1,
+    "explanation": "Cloud Build is Google Cloud's CI/CD service that can automatically trigger builds from Git repositories and deploy applications."
+  },
+  {
+    "id": "7",
+    "question": "Your company needs to ensure that all VM instances in a specific subnet cannot access the internet directly but can still receive updates from Google's update servers. How should you configure this?",
+    "options": [
+      "Create a firewall rule blocking all outbound traffic",
+      "Use Private Google Access and remove external IP addresses from VMs",
+      "Configure Cloud NAT for outbound internet access",
+      "Use VPC peering to route traffic through another network"
+    ],
+    "correct": 1,
+    "explanation": "Private Google Access allows VMs without external IPs to reach Google services and receive updates while preventing direct internet access."
+  },
+  {
+    "id": "8",
+    "question": "You need to run a big data processing job that processes 10TB of data once per week. The job takes about 2 hours to complete. Which service is most cost-effective?",
+    "options": [
+      "Compute Engine with persistent instances",
+      "Dataflow with batch processing",
+      "Dataproc with preemptible instances",
+      "BigQuery for data processing"
+    ],
+    "correct": 2,
+    "explanation": "Dataproc with preemptible instances is cost-effective for batch jobs that can tolerate interruptions, perfect for weekly processing jobs."
+  },
+  {
+    "id": "9",
+    "question": "Your web application needs to store user session data that expires after 1 hour. The data needs to be accessed with very low latency. Which storage option should you use?",
+    "options": [
+      "Cloud SQL",
+      "Firestore",
+      "Memorystore for Redis",
+      "Cloud Storage"
+    ],
+    "correct": 2,
+    "explanation": "Memorystore for Redis provides in-memory caching with TTL support, perfect for session data with expiration requirements."
+  },
+  {
+    "id": "10",
+    "question": "You need to set up monitoring alerts when CPU utilization of your Compute Engine instances exceeds 80% for more than 5 minutes. Which service should you use?",
+    "options": [
+      "Cloud Logging",
+      "Cloud Monitoring (formerly Stackdriver)",
+      "Cloud Trace",
+      "Cloud Debugger"
+    ],
+    "correct": 1,
+    "explanation": "Cloud Monitoring provides alerting capabilities based on metrics like CPU utilization with configurable thresholds and time windows."
+  },
+  {
+    "id": "11",
+    "question": "Your application needs to process messages asynchronously with guaranteed delivery and the ability to replay messages. Which service should you use?",
+    "options": [
+      "Cloud Tasks",
+      "Cloud Pub/Sub",
+      "Cloud Scheduler",
+      "Cloud Functions"
+    ],
+    "correct": 1,
+    "explanation": "Cloud Pub/Sub provides guaranteed message delivery, message retention for replay, and supports asynchronous processing patterns."
+  },
+  {
+    "id": "12",
+    "question": "You need to provide secure access to a private GKE cluster for your development team. What is the recommended approach?",
+    "options": [
+      "Enable public endpoint and use firewall rules",
+      "Use authorized networks to limit access by IP",
+      "Set up a bastion host in the same VPC",
+      "Use Identity-Aware Proxy (IAP) with kubectl"
+    ],
+    "correct": 1,
+    "explanation": "Authorized networks allow you to specify which IP ranges can access the cluster's public endpoint, providing secure access control."
+  },
+  {
+    "id": "13",
+    "question": "Your company wants to implement infrastructure as code. You need to create and manage Google Cloud resources using declarative configuration files. Which tool should you use?",
+    "options": [
+      "gcloud CLI",
+      "Cloud Console",
+      "Deployment Manager or Terraform",
+      "Cloud Shell"
+    ],
+    "correct": 2,
+    "explanation": "Deployment Manager (Google's native tool) or Terraform provide infrastructure as code capabilities with declarative configuration files."
+  },
+  {
+    "id": "14",
+    "question": "You have a multi-tier application with web, application, and database tiers. You want to ensure that the database tier can only be accessed from the application tier. How should you configure this?",
+    "options": [
+      "Use firewall rules with network tags",
+      "Place each tier in separate VPCs",
+      "Use Cloud IAM roles for access control",
+      "Configure VPC peering between tiers"
+    ],
+    "correct": 0,
+    "explanation": "Network tags with firewall rules allow you to control traffic between different tiers by applying rules based on source and target tags."
+  },
+  {
+    "id": "15",
+    "question": "Your application generates 1GB of log data per day that needs to be stored for compliance reasons for 7 years. The logs are rarely accessed after 90 days. What storage strategy should you implement?",
+    "options": [
+      "Cloud Storage Standard with lifecycle policy to Archive after 90 days",
+      "Cloud Storage Nearline for all data",
+      "Cloud Logging with long retention period",
+      "BigQuery for log storage and analysis"
+    ],
+    "correct": 0,
+    "explanation": "Standard storage for initial period, then lifecycle policy moves to Archive storage for long-term retention at minimal cost."
+  },
+  {
+    "id": "16",
+    "question": "You need to migrate a large PostgreSQL database (2TB) to Google Cloud with minimal downtime. Which approach should you use?",
+    "options": [
+      "Use Cloud SQL import from SQL dump",
+      "Set up Cloud SQL replica and promote when ready",
+      "Use Database Migration Service",
+      "Export to Cloud Storage and import to Cloud SQL"
+    ],
+    "correct": 2,
+    "explanation": "Database Migration Service provides minimal downtime migration for large databases with continuous data replication."
+  },
+  {
+    "id": "17",
+    "question": "Your application running on App Engine needs to access a Cloud SQL instance. How should you configure the connection?",
+    "options": [
+      "Use the Cloud SQL instance's public IP address",
+      "Use the Cloud SQL Proxy",
+      "Configure VPC peering between App Engine and Cloud SQL",
+      "Use private IP with VPC connector"
+    ],
+    "correct": 1,
+    "explanation": "Cloud SQL Proxy provides secure connections from App Engine to Cloud SQL instances without exposing the database publicly."
+  },
+  {
+    "id": "18",
+    "question": "You need to ensure that your GKE cluster nodes are automatically updated with the latest security patches. Which feature should you enable?",
+    "options": [
+      "Node auto-provisioning",
+      "Node auto-upgrade",
+      "Cluster autoscaling",
+      "Workload Identity"
+    ],
+    "correct": 1,
+    "explanation": "Node auto-upgrade automatically updates GKE nodes with the latest patches and Kubernetes versions during maintenance windows."
+  },
+  {
+    "id": "19",
+    "question": "Your company needs to implement disaster recovery for a critical application with an RTO of 4 hours and RPO of 1 hour. Which strategy should you implement?",
+    "options": [
+      "Regular backups to Cloud Storage",
+      "Multi-regional deployment with active-passive setup",
+      "Single region with automated backups",
+      "Multi-regional deployment with active-active setup"
+    ],
+    "correct": 1,
+    "explanation": "Active-passive multi-regional deployment can meet RTO of 4 hours with regular data replication to meet RPO of 1 hour."
+  },
+  {
+    "id": "20",
+    "question": "You need to analyze streaming data in real-time and store the results in BigQuery. Which combination of services should you use?",
+    "options": [
+      "Cloud Pub/Sub → Cloud Functions → BigQuery",
+      "Cloud Pub/Sub → Dataflow → BigQuery",
+      "Cloud Storage → Cloud Functions → BigQuery",
+      "Dataflow → Cloud Pub/Sub → BigQuery"
+    ],
+    "correct": 1,
+    "explanation": "Cloud Pub/Sub ingests streaming data, Dataflow processes it in real-time, and results are stored in BigQuery for analysis."
+  },
+  {
+    "id": "21",
+    "question": "Your organization requires that all data must be encrypted at rest and in transit. Which Google Cloud feature ensures this requirement is met by default?",
+    "options": [
+      "Customer-Managed Encryption Keys (CMEK)",
+      "Google-managed encryption keys",
+      "Cloud HSM",
+      "Application-level encryption"
+    ],
+    "correct": 1,
+    "explanation": "Google Cloud encrypts all data at rest and in transit by default using Google-managed encryption keys."
+  },
+  {
+    "id": "22",
+    "question": "You need to provide temporary access to a Cloud Storage bucket for external partners. The access should expire after 24 hours. What should you use?",
+    "options": [
+      "Signed URLs",
+      "Service account keys",
+      "Cloud IAM temporary roles",
+      "Bucket-level permissions"
+    ],
+    "correct": 0,
+    "explanation": "Signed URLs provide time-limited access to Cloud Storage objects without requiring authentication credentials."
+  },
+  {
+    "id": "23",
+    "question": "Your application needs to perform batch processing of large datasets stored in Cloud Storage. The processing is CPU-intensive and can tolerate interruptions. Which compute option is most cost-effective?",
+    "options": [
+      "Compute Engine standard instances",
+      "Compute Engine preemptible instances",
+      "App Engine flexible environment",
+      "Cloud Functions"
+    ],
+    "correct": 1,
+    "explanation": "Preemptible instances offer significant cost savings (up to 80%) for fault-tolerant, batch processing workloads."
+  },
+  {
+    "id": "24",
+    "question": "You need to implement health checks for your application load balancer. The application has a /health endpoint that returns HTTP 200 when healthy. How should you configure this?",
+    "options": [
+      "TCP health check on port 80",
+      "HTTP health check on /health path",
+      "HTTPS health check with SSL verification",
+      "gRPC health check"
+    ],
+    "correct": 1,
+    "explanation": "HTTP health checks can monitor specific endpoints like /health and verify the response code for application health."
+  },
+  {
+    "id": "25",
+    "question": "Your team needs to deploy applications across multiple environments (dev, staging, prod) with different configurations. Which approach should you use?",
+    "options": [
+      "Separate projects for each environment",
+      "Same project with different regions",
+      "Resource labels to distinguish environments",
+      "Different service accounts for each environment"
+    ],
+    "correct": 0,
+    "explanation": "Separate projects provide complete isolation between environments, preventing accidental changes and enabling different access controls."
+  },
+  {
+    "id": "26",
+    "question": "You need to configure automatic scaling for a Cloud SQL instance based on CPU utilization. Which feature should you use?",
+    "options": [
+      "Cloud SQL automatic storage increase",
+      "Cloud SQL read replicas",
+      "This feature is not available for Cloud SQL",
+      "Horizontal pod autoscaling"
+    ],
+    "correct": 2,
+    "explanation": "Cloud SQL does not support automatic scaling of compute resources. You can add read replicas for read scaling but not automatic vertical scaling."
+  },
+  {
+    "id": "27",
+    "question": "Your application generates large amounts of time-series data that needs to be analyzed. The data has a specific retention period of 2 years. Which storage solution should you use?",
+    "options": [
+      "Bigtable",
+      "BigQuery with table expiration",
+      "Cloud SQL with automated backups",
+      "Firestore with TTL"
+    ],
+    "correct": 1,
+    "explanation": "BigQuery is ideal for analytical workloads on large datasets, and table expiration can automatically manage data retention."
+  },
+  {
+    "id": "28",
+    "question": "You need to ensure that your GKE pods can only pull images from your organization's Container Registry. How should you configure this?",
+    "options": [
+      "Use Binary Authorization",
+      "Configure Pod Security Policies",
+      "Set up Private Google Access",
+      "Use Workload Identity"
+    ],
+    "correct": 0,
+    "explanation": "Binary Authorization ensures that only verified container images can be deployed to GKE clusters."
+  },
+  {
+    "id": "29",
+    "question": "Your application needs to store configuration data that is accessed frequently but changes rarely. The data needs to be available globally with low latency. Which solution should you use?",
+    "options": [
+      "Cloud Storage with global bucket",
+      "Firestore in Native mode with global replication",
+      "Cloud SQL with read replicas in multiple regions",
+      "Memorystore for Redis with global replication"
+    ],
+    "correct": 1,
+    "explanation": "Firestore in Native mode provides global replication, low latency access, and is perfect for configuration data."
+  },
+  {
+    "id": "30",
+    "question": "You need to implement a deployment strategy that allows you to test new versions with a small percentage of users before full rollout. Which approach should you use?",
+    "options": [
+      "Blue-green deployment",
+      "Rolling update",
+      "Canary deployment",
+      "Recreate deployment"
+    ],
+    "correct": 2,
+    "explanation": "Canary deployment allows you to route a small percentage of traffic to the new version for testing before full rollout."
+  },
+  {
+    "id": "31",
+    "question": "Your organization needs to ensure that certain VM instances can only be created in specific regions due to data residency requirements. How should you enforce this?",
+    "options": [
+      "Use Organization Policy constraints",
+      "Configure IAM roles with regional restrictions",
+      "Use VPC firewall rules",
+      "Set up custom machine types"
+    ],
+    "correct": 0,
+    "explanation": "Organization Policy constraints can restrict resource creation to specific regions across the entire organization."
+  },
+  {
+    "id": "32",
+    "question": "You need to migrate data from an on-premises database to BigQuery. The data transfer should happen regularly and automatically. Which service should you use?",
+    "options": [
+      "BigQuery Data Transfer Service",
+      "Cloud Dataflow",
+      "Cloud Composer",
+      "gsutil command-line tool"
+    ],
+    "correct": 0,
+    "explanation": "BigQuery Data Transfer Service provides automated, scheduled data transfers from various sources to BigQuery."
+  },
+  {
+    "id": "33",
+    "question": "Your application running on GKE needs to access secrets like API keys and passwords. What is the most secure way to manage these secrets?",
+    "options": [
+      "Store in ConfigMaps",
+      "Use Kubernetes Secrets",
+      "Use Google Secret Manager",
+      "Hardcode in container images"
+    ],
+    "correct": 2,
+    "explanation": "Google Secret Manager provides centralized, secure secret management with auditing and access controls."
+  },
+  {
+    "id": "34",
+    "question": "You need to set up a VPN connection between your on-premises network and Google Cloud. The connection should be highly available. Which solution should you implement?",
+    "options": [
+      "Cloud VPN with single tunnel",
+      "Cloud VPN Gateway with multiple tunnels",
+      "Dedicated Interconnect",
+      "Partner Interconnect"
+    ],
+    "correct": 1,
+    "explanation": "Cloud VPN Gateway with multiple tunnels provides high availability through redundant connections."
+  },
+  {
+    "id": "35",
+    "question": "Your web application experiences traffic spikes during specific hours. You want to automatically scale the number of instances based on incoming requests. Which metric should you use for autoscaling?",
+    "options": [
+      "CPU utilization",
+      "Memory usage",
+      "HTTP request rate",
+      "Disk I/O"
+    ],
+    "correct": 2,
+    "explanation": "HTTP request rate directly correlates with application load and is the most appropriate metric for web application scaling."
+  },
+  {
+    "id": "36",
+    "question": "You need to provide your development team with access to production logs without giving them access to production resources. How should you configure this?",
+    "options": [
+      "Export logs to Cloud Storage and provide access to the bucket",
+      "Create custom IAM role with Logs Viewer permission only",
+      "Use log sinks to send logs to a separate project",
+      "Provide read-only access to the production project"
+    ],
+    "correct": 2,
+    "explanation": "Log sinks can export logs to a separate project where developers can have appropriate access without accessing production resources."
+  },
+  {
+    "id": "37",
+    "question": "Your application needs to process images uploaded by users. The processing is CPU-intensive and can take several minutes. Which architecture should you implement?",
+    "options": [
+      "Synchronous processing in the web application",
+      "Cloud Functions triggered by Cloud Storage events",
+      "Cloud Tasks with worker instances processing the queue",
+      "App Engine background threads"
+    ],
+    "correct": 2,
+    "explanation": "Cloud Tasks with worker instances allows for reliable, asynchronous processing of long-running, CPU-intensive tasks."
+  },
+  {
+    "id": "38",
+    "question": "You need to implement network segmentation for a multi-tier application where each tier should only communicate with adjacent tiers. Which approach should you use?",
+    "options": [
+      "Separate VPC for each tier",
+      "Subnets with firewall rules and network tags",
+      "VPC peering between tiers",
+      "Shared VPC with different projects"
+    ],
+    "correct": 1,
+    "explanation": "Subnets with firewall rules and network tags provide granular control over inter-tier communication within a single VPC."
+  },
+  {
+    "id": "39",
+    "question": "Your application requires a managed database that supports ACID transactions across multiple rows and tables. Which Google Cloud database service should you use?",
+    "options": [
+      "Firestore in Datastore mode",
+      "Bigtable",
+      "Cloud SQL",
+      "Memorystore"
+    ],
+    "correct": 2,
+    "explanation": "Cloud SQL supports full ACID transactions across multiple rows and tables, making it suitable for relational data requirements."
+  },
+  {
+    "id": "40",
+    "question": "You need to ensure that your Cloud Function can only be invoked by authenticated users from your organization. How should you configure this?",
+    "options": [
+      "Use IAM to control access to the function",
+      "Implement authentication in the function code",
+      "Use VPC firewall rules",
+      "Deploy the function in a private subnet"
+    ],
+    "correct": 0,
+    "explanation": "Cloud Functions can be secured using IAM roles and policies to control who can invoke the function."
+  },
+  {
+    "id": "41",
+    "question": "Your organization needs to audit all API calls made to Google Cloud services. Which service provides this capability?",
+    "options": [
+      "Cloud Logging",
+      "Cloud Monitoring",
+      "Cloud Audit Logs",
+      "Cloud Security Scanner"
+    ],
+    "correct": 2,
+    "explanation": "Cloud Audit Logs automatically records API calls and administrative activities across Google Cloud services."
+  },
+  {
+    "id": "42",
+    "question": "You need to implement a data pipeline that processes streaming data, performs transformations, and stores results in multiple destinations. Which service should you use?",
+    "options": [
+      "Cloud Composer",
+      "Cloud Dataflow",
+      "Cloud Functions",
+      "Cloud Scheduler"
+    ],
+    "correct": 1,
+    "explanation": "Cloud Dataflow is designed for stream and batch data processing with support for multiple output destinations."
+  },
+  {
+    "id": "43",
+    "question": "Your application running on Compute Engine needs to access multiple Google Cloud APIs. What is the recommended way to authenticate?",
+    "options": [
+      "Store service account keys on the VM",
+      "Use the Compute Engine default service account",
+      "Create a custom service account with minimal required permissions",
+      "Use gcloud auth login on each VM"
+    ],
+    "correct": 2,
+    "explanation": "Custom service accounts with minimal required permissions follow the principle of least privilege for secure access."
+  },
+  {
+    "id": "44",
+    "question": "You need to implement a disaster recovery solution that can recover your application in a different region within 2 hours. Which approach should you use?",
+    "options": [
+      "Regular backups to Cloud Storage",
+      "Continuous replication to standby region",
+      "Weekly snapshots of all resources",
+      "Multi-regional active-active deployment"
+    ],
+    "correct": 1,
+    "explanation": "Continuous replication to a standby region enables rapid recovery within the required 2-hour timeframe."
+  },
+  {
+    "id": "45",
+    "question": "Your team needs to deploy a machine learning model for real-time predictions with automatic scaling. Which service should you use?",
+    "options": [
+      "AI Platform Prediction",
+      "Cloud Functions",
+      "Compute Engine with autoscaling",
+      "Cloud Run"
+    ],
+    "correct": 0,
+    "explanation": "AI Platform Prediction (now part of Vertex AI) is specifically designed for serving ML models with automatic scaling."
+  },
+  {
+    "id": "46",
+    "question": "You need to ensure that traffic between your application tiers is encrypted. The application runs on GKE. Which approach should you implement?",
+    "options": [
+      "Use HTTPS for all inter-service communication",
+      "Implement Istio service mesh with mTLS",
+      "Configure VPC firewall rules",
+      "Use private IP addresses only"
+    ],
+    "correct": 1,
+    "explanation": "Istio service mesh provides automatic mutual TLS (mTLS) for encrypting traffic between services in GKE."
+  },
+  {
+    "id": "47",
+    "question": "Your application needs to store and retrieve large binary files (videos, images) with global access and high availability. Which storage solution should you use?",
+    "options": [
+      "Cloud SQL with binary data columns",
+      "Cloud Storage with multi-regional buckets",
+      "Persistent disks attached to Compute Engine",
+      "Filestore with global access"
+    ],
+    "correct": 1,
+    "explanation": "Cloud Storage with multi-regional buckets provides global access, high availability, and is optimized for large binary files."
+  },
+  {
+    "id": "48",
+    "question": "You need to implement cost controls to prevent unexpected charges in your Google Cloud project. Which approach should you use?",
+    "options": [
+      "Set up billing alerts only",
+      "Use budget alerts with Cloud Functions for automated actions",
+      "Monitor usage with Cloud Monitoring",
+      "Set organization policy constraints"
+    ],
+    "correct": 1,
+    "explanation": "Budget alerts combined with Cloud Functions can provide proactive cost control through automated responses to spending thresholds."
+  },
+  {
+    "id": "49",
+    "question": "Your application needs to perform complex analytical queries on large datasets with sub-second response times. Which service should you use?",
+    "options": [
+      "BigQuery",
+      "Cloud SQL",
+      "Bigtable",
+      "Firestore"
+    ],
+    "correct": 0,
+    "explanation": "BigQuery is designed for complex analytical queries on large datasets with fast query performance."
+  },
+  {
+    "id": "50",
+    "question": "You need to migrate a monolithic application to microservices architecture on Google Cloud. The migration should be done gradually. Which approach should you use?",
+    "options": [
+      "Rewrite the entire application at once",
+      "Use the Strangler Fig pattern with Cloud Endpoints",
+      "Deploy everything on App Engine flexible environment",
+      "Use Cloud Functions for all microservices"
+    ],
+    "correct": 1,
+    "explanation": "The Strangler Fig pattern allows gradual migration by routing requests between old and new services, with Cloud Endpoints managing the API gateway."
+  },
+  {
+    "id": "51",
+    "question": "TechCorp has 500 employees across 3 departments (Engineering, Marketing, Sales). They're migrating to Google Cloud and need to ensure proper resource isolation and billing separation. Engineering needs full access to development resources, Marketing needs limited compute access, and Sales only needs BigQuery access for analytics.\n\nWhat is the most appropriate organizational structure?",
+    "options": [
+      "Single project with IAM roles assigned to individual users",
+      "One project per department with organization-level IAM policies",
+      "Folders for each department containing respective projects, with inherited IAM policies",
+      "Single project with resource labels for department identification"
+    ],
+    "correct": 2,
+    "explanation": "Folders provide hierarchical organization with inherited IAM policies, enabling department-level access control while maintaining centralized governance."
+  },
+  {
+    "id": "52",
+    "question": "FinanceFlow processes sensitive financial data and must comply with strict audit requirements. They need to track all administrative actions across their 15 Google Cloud projects, ensure proper access reviews, and automatically disable unused service accounts after 90 days.\n\nWhat combination of services should they implement?",
+    "options": [
+      "Cloud Audit Logs + Cloud Asset Inventory + Cloud Scheduler for automation",
+      "Cloud Logging + IAM Recommender + Organization Policy Service",
+      "Cloud Security Center + Access Transparency + Cloud Functions",
+      "Cloud Audit Logs + IAM Recommender + Cloud Scheduler for automation"
+    ],
+    "correct": 3,
+    "explanation": "Cloud Audit Logs tracks all admin actions, IAM Recommender identifies unused accounts, and Cloud Scheduler can automate the 90-day cleanup process."
+  },
+  {
+    "id": "53",
+    "question": "StartupXYZ is growing rapidly from 10 to 100 employees. They currently manage user accounts manually but need to automate user provisioning/deprovisioning and integrate with their existing Active Directory for single sign-on. New employees should automatically get appropriate Cloud Console access based on their department.\n\nWhat solution should they implement?",
+    "options": [
+      "Cloud Identity with GCDS (Google Cloud Directory Sync) and automated provisioning",
+      "Firebase Authentication with custom user management",
+      "Manual IAM management with Google Workspace integration",
+      "Third-party identity provider with custom API integration"
+    ],
+    "correct": 0,
+    "explanation": "Cloud Identity with GCDS provides AD integration, automated provisioning, and department-based access assignment through group membership."
+  },
+  {
+    "id": "54",
+    "question": "EcommerceGiant expects their Black Friday traffic to increase API calls by 1000x. They use 15 different Google Cloud APIs across their microservices. Currently, they're hitting quota limits during traffic spikes, causing service failures.\n\nWhat proactive approach should they take?",
+    "options": [
+      "Contact Google Support for automatic quota increases during events",
+      "Request quota increases for all APIs based on projected usage and implement monitoring",
+      "Implement request queuing and retry logic in applications",
+      "Cache API responses to reduce quota consumption"
+    ],
+    "correct": 1,
+    "explanation": "Proactive quota increase requests based on projected usage prevents service failures, with monitoring to track actual consumption."
+  },
+  {
+    "id": "55",
+    "question": "GlobalManufacturing operates in 25 countries with varying data residency laws. They need to ensure data for EU customers stays in EU regions, US data in US regions, etc. They also need consolidated billing across all regions but separate cost tracking per country.\n\nHow should they structure their billing and projects?",
+    "options": [
+      "Single billing account with projects per country, using labels for cost allocation",
+      "Multiple billing accounts per region with consolidated reporting",
+      "Single billing account with folders per region containing country-specific projects",
+      "Separate billing accounts per country with manual cost aggregation"
+    ],
+    "correct": 2,
+    "explanation": "Single billing account enables consolidated billing, while folders per region with country projects ensure data residency compliance and granular cost tracking."
+  },
+  {
+    "id": "56",
+    "question": "HealthTech processes PHI (Protected Health Information) and needs to meet HIPAA compliance. They require detailed audit trails of who accessed what data when, automatic alerts for unusual access patterns, and quarterly access reviews for all personnel.\n\nWhat monitoring and compliance setup should they implement?",
+    "options": [
+      "Cloud Audit Logs + Security Command Center + IAM Recommender with scheduled reports",
+      "Cloud Logging + Cloud Monitoring + manual quarterly reviews",
+      "Access Transparency + Cloud DLP + custom alerting solution",
+      "VPC Flow Logs + Cloud Security Scanner + automated compliance reports"
+    ],
+    "correct": 0,
+    "explanation": "Cloud Audit Logs provides detailed access trails, Security Command Center detects unusual patterns, and IAM Recommender supports quarterly access reviews."
+  },
+  {
+    "id": "57",
+    "question": "DevCorp has development, staging, and production environments. Developers need full access to dev, limited access to staging, and read-only access to production logs. They want to prevent accidental resource creation in production and ensure staging mirrors production configuration.\n\nWhat is the best access control strategy?",
+    "options": [
+      "Separate projects for each environment with custom IAM roles and Organization Policies",
+      "Single project with resource labels and conditional IAM bindings",
+      "Environment-specific service accounts with role inheritance",
+      "VPC-based isolation with firewall rules for access control"
+    ],
+    "correct": 0,
+    "explanation": "Separate projects provide complete isolation, custom IAM roles enable granular permissions, and Organization Policies prevent accidental production changes."
+  },
+  {
+    "id": "58",
+    "question": "MultiRegionCorp operates globally and needs cost optimization. They notice their Cloud Storage costs are high because data is stored in Standard class but accessed infrequently after 30 days, and rarely after 1 year. They need automatic cost optimization without manual intervention.\n\nWhat storage lifecycle strategy should they implement?",
+    "options": [
+      "Manual monthly reviews and storage class changes",
+      "Lifecycle policies: Standard → Nearline (30 days) → Coldline (365 days) → Archive (7 years)",
+      "Object Lifecycle Management with custom Cloud Functions",
+      "Regular data analysis and automated gsutil commands"
+    ],
+    "correct": 1,
+    "explanation": "Lifecycle policies automatically transition data between storage classes based on access patterns, optimizing costs without manual intervention."
+  },
+  {
+    "id": "59",
+    "question": "CloudNative startup has 5 microservices that need different APIs enabled. Service A needs Compute Engine API, Service B needs BigQuery API, Service C needs both plus Cloud Storage API. They want to follow the principle of least privilege and minimize API attack surface.\n\nHow should they manage API enablement?",
+    "options": [
+      "Enable all APIs at organization level for consistency",
+      "Create separate projects for each service with only required APIs enabled",
+      "Single project with all APIs enabled but restricted by service accounts",
+      "Use API keys to control which services can access which APIs"
+    ],
+    "correct": 1,
+    "explanation": "Separate projects with only required APIs enabled follows least privilege principle and minimizes attack surface per service."
+  },
+  {
+    "id": "60",
+    "question": "DataAnalytics company processes customer data and needs to export billing data to BigQuery for cost analysis, set up alerts when monthly spend exceeds $10,000, and automatically pause non-critical workloads when budget reaches 90% of limit.\n\nWhat billing configuration should they implement?",
+    "options": [
+      "Billing export to BigQuery + Budget alerts + Cloud Functions for workload management",
+      "Billing API integration + Cloud Monitoring alerts + Manual intervention procedures",
+      "Cost optimization recommendations + Committed use discounts + Resource quotas",
+      "Billing dashboard monitoring + Email notifications + Scheduled instance shutdowns"
+    ],
+    "correct": 0,
+    "explanation": "Billing export enables analysis, budget alerts provide notifications, and Cloud Functions can automate workload management based on spend thresholds."
+  },
+  {
+    "id": "61",
+    "question": "GameStudio develops mobile games with unpredictable traffic patterns. Their game servers need to handle anywhere from 100 to 50,000 concurrent players with sub-second scaling. The servers are stateless and can tolerate brief interruptions. They want to minimize costs during low-traffic periods.\n\nWhat compute strategy should they use?",
+    "options": [
+      "Compute Engine with Spot VMs and managed instance groups with aggressive scaling",
+      "GKE Autopilot with Horizontal Pod Autoscaler and Spot nodes",
+      "Cloud Run with high concurrency settings and maximum instances",
+      "App Engine with automatic scaling and F1 instance class"
+    ],
+    "correct": 0,
+    "explanation": "Spot VMs provide cost savings, managed instance groups enable rapid scaling, and stateless game servers can tolerate Spot VM interruptions."
+  },
+  {
+    "id": "62",
+    "question": "FinancialServices runs a trading platform requiring ultra-low latency (sub-millisecond), high memory (512GB RAM), and consistent performance. They process millions of transactions per second and cannot tolerate any performance variability or interruptions.\n\nWhat compute configuration should they choose?",
+    "options": [
+      "Compute Engine with custom machine types and local SSDs",
+      "Compute Engine with memory-optimized instances and committed use discounts",
+      "GKE with guaranteed QoS and local SSD storage",
+      "Sole-tenant nodes with custom machine types and dedicated interconnect"
+    ],
+    "correct": 3,
+    "explanation": "Sole-tenant nodes eliminate noisy neighbor issues, custom machine types provide required specs, and dedicated interconnect ensures consistent ultra-low latency."
+  },
+  {
+    "id": "63",
+    "question": "RetailChain stores product catalogs (rarely changed), customer orders (frequently accessed for 90 days, then archived), and real-time inventory data (constantly updated). They need to optimize storage costs while maintaining performance for active data.\n\nWhat storage architecture should they implement?",
+    "options": [
+      "Cloud SQL for all data with automated backups",
+      "Cloud Storage (Standard for inventory, Nearline for orders, Coldline for catalogs)",
+      "Firestore for inventory, Cloud Storage with lifecycle policies for orders, Cloud Storage Coldline for catalogs",
+      "BigQuery for all data with partitioning and clustering"
+    ],
+    "correct": 2,
+    "explanation": "Firestore handles real-time inventory updates, lifecycle policies optimize order storage costs, and Coldline provides cost-effective catalog storage."
+  },
+  {
+    "id": "64",
+    "question": "SocialMedia app stores user profiles (global access, eventual consistency acceptable), chat messages (strong consistency required), and media files (global CDN needed). They have 10 million global users with varying data access patterns.\n\nWhat data storage combination should they use?",
+    "options": [
+      "Cloud SQL with read replicas globally + Cloud Storage with global load balancing",
+      "Firestore multi-region for profiles, Cloud Spanner for messages, Cloud Storage with CDN",
+      "BigQuery for all structured data + Cloud Storage for media files",
+      "Cloud SQL for profiles and messages + Cloud Storage with global distribution"
+    ],
+    "correct": 1,
+    "explanation": "Firestore multi-region provides global profile access with eventual consistency, Spanner ensures strong consistency for messages, Cloud Storage with CDN optimizes media delivery."
+  },
+  {
+    "id": "65",
+    "question": "LogisticsHub processes IoT sensor data from 100,000 delivery trucks. Each truck sends location data every 30 seconds (time-series data), and they need to run real-time analytics for route optimization and historical analysis for trends.\n\nWhat data solution architecture should they implement?",
+    "options": [
+      "Pub/Sub → Dataflow → BigQuery for analytics + Bigtable for real-time lookups",
+      "Cloud IoT Core → Cloud Functions → Cloud SQL with time-series optimization",
+      "Direct writes to BigQuery with streaming inserts and scheduled queries",
+      "Cloud Storage for raw data + scheduled Dataflow jobs for processing"
+    ],
+    "correct": 0,
+    "explanation": "Pub/Sub handles high-volume ingestion, Dataflow processes streaming data, BigQuery enables analytics, and Bigtable provides fast time-series lookups."
+  },
+  {
+    "id": "66",
+    "question": "MediaStreaming company serves video content globally. They need to minimize latency for viewers, handle traffic spikes during popular releases, and optimize bandwidth costs. Content is accessed frequently when new, then demand drops significantly.\n\nWhat content delivery strategy should they implement?",
+    "options": [
+      "Global load balancer with Cloud Storage and CDN with cache control headers",
+      "Multi-regional Cloud Storage with lifecycle policies and Cloud CDN",
+      "Regional load balancers with local storage and manual content distribution",
+      "Cloud Storage with global distribution and intelligent tiering"
+    ],
+    "correct": 0,
+    "explanation": "Global load balancer distributes traffic efficiently, Cloud Storage provides scalable origin, and CDN with cache control optimizes global content delivery and costs."
+  },
+  {
+    "id": "67",
+    "question": "HealthcareSaaS serves medical applications to hospitals across different regions. They need to ensure patient data never leaves specific geographic boundaries due to regulations, while providing disaster recovery within the same region.\n\nWhat network and compute architecture should they design?",
+    "options": [
+      "Single global VPC with regional subnets and data residency policies",
+      "Regional VPCs per compliance zone with VPC peering for shared services",
+      "Multi-regional deployment with data encryption and access controls",
+      "Regional clusters with cross-region backup and failover automation"
+    ],
+    "correct": 1,
+    "explanation": "Regional VPCs ensure data residency compliance, while VPC peering enables shared services like monitoring and logging across regions."
+  },
+  {
+    "id": "68",
+    "question": "TechStartup runs a Kubernetes-based microservices application on GKE. They need to implement secure cluster access that enforces user identity, integrates with Google Cloud IAM, and limits access based on user roles and groups. Additionally, they want to audit all administrative actions performed on the cluster.\n\nWhat is the best approach to meet these requirements?",
+    "options": [
+      "Use Kubernetes RBAC with static user certificates and audit logs enabled",
+      "Enable GKE Workload Identity with OAuth tokens and configure Kubernetes RBAC mapped to Google Cloud IAM roles",
+      "Use Google Cloud IAM for authentication via GKE’s integrated OAuth, enable Kubernetes RBAC for authorization, and activate Cloud Audit Logs for GKE control plane activities",
+      "Manage access using SSH to nodes and apply firewall rules to restrict IP addresses"
+    ],
+    "correct": 2,
+    "explanation": "GKE integrates with Google Cloud IAM for authentication, Kubernetes RBAC for authorization based on roles/groups, and Cloud Audit Logs for auditing cluster admin actions, providing secure and auditable access."
+  },
+  {
+    "id": "69",
+    "question": "An e-commerce company runs a GKE cluster hosting multiple microservices. They want to ensure that each microservice only accesses the specific Google Cloud resources it needs, following the principle of least privilege. Additionally, they want to avoid managing static service account keys. What is the recommended method to achieve this?",
+    "options": [
+      "Create Google Cloud service accounts with broad permissions and mount service account keys as secrets in pods",
+      "Use GKE Workload Identity to associate Kubernetes service accounts with Google Cloud service accounts having minimal required permissions",
+      "Use node-level service accounts with all required permissions and rely on network policies to restrict access",
+      "Manually rotate service account keys monthly and distribute them securely to pods"
+    ],
+    "correct": 1,
+    "explanation": "GKE Workload Identity allows pods to use Google Cloud service accounts without static keys, enforcing least privilege and enhancing security by binding Kubernetes service accounts to Google Cloud service accounts."
+  },
+    {
+    "id": "70",
+    "question": "A SaaS company runs multiple GKE clusters across different regions. They want to centrally manage and enforce consistent network policies for pod-to-pod communication across all clusters to enhance security and compliance. Which solution should they implement?",
+    "options": [
+      "Configure Calico network policies individually on each GKE cluster",
+      "Use Anthos Config Management to deploy and enforce consistent network policies across clusters",
+      "Use Kubernetes NetworkPolicy resources only on the primary cluster and rely on default allow rules elsewhere",
+      "Manage network policies manually via kubectl for each cluster whenever needed"
+    ],
+    "correct": 1,
+    "explanation": "Anthos Config Management enables centralized, declarative policy management across multiple GKE clusters, ensuring consistent and compliant network policies."
+  }
+]
